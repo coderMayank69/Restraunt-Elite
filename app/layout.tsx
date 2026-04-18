@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist_Mono, Poppins } from "next/font/google";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${cormorant.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen bg-background text-foreground">{children}</body>
+      <body className="min-h-screen bg-background text-foreground">
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }
